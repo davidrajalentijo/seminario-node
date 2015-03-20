@@ -6,8 +6,11 @@ module.exports = function(app) {
   findAllUsers = function(req, res) {
   	User.find(function(err, users) {
   		if(!err) {
-        console.log('GET /users')
+        console.log('GET /users') 
+
+        res.render("coleccionusuarios", { title: 'Lista de Usuarios',users: users});
   			res.send(users);
+        
   		} else {
   			console.log('ERROR: ' + err);
   		}
@@ -20,6 +23,7 @@ module.exports = function(app) {
   		if(!err) {
         console.log('GET /user/' + req.params.id);
   			res.send(users);
+         res.render("usuario", { title: 'Datos de Usuario',users: users});
   		} else {
   			console.log('ERROR: ' + err);
   		}

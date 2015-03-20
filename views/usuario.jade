@@ -1,0 +1,13 @@
+h2 Datos de Usuarios
+table(border='1')
+  tr
+    th Username
+    th Nombre
+    th Correo
+  - if (users)
+    - each user in users
+      tr
+        td
+          a(href="/user/" + user._id.toString()) #{user.username}
+        td #{user.nombre}
+        td #{user.correo}
