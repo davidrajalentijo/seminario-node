@@ -8,5 +8,5 @@ var userSchema = new Schema({
 
 
 });
-
+//permitimos que sea llamado desde el archivo principal de la aplicación
 module.exports = mongoose.model('User', userSchema);

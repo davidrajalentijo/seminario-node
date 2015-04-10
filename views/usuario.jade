@@ -1,13 +1,15 @@
-h2 Datos de Usuarios
-table(border='1')
-  tr
-    th Username
-    th Nombre
-    th Correo
-  - if (users)
-    - each user in users
-      tr
-        td
-          a(href="/user/" + user._id.toString()) #{user.username}
-        td #{user.nombre}
-        td #{user.correo}
+h2 #{title}
+form(method='post')
+
+  p
+    label(for="username") Username:
+      input(type='text', name='username', size=100, value=users.username)
+  p
+    label(for="nombre") Nombre:
+      input(type='text', name='nombre', value=users.nombre)
+
+  p
+    label(for="correo") Correo:
+      input(type='text', name='correo', value=users.correo)
+
+  
