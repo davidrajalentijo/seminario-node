@@ -9,9 +9,9 @@ module.exports = function(app) {
   	User.find(function(err, users) {
   		if(!err) {
         console.log('GET /users') 
-
-        res.render("coleccionusuarios", { title: 'Lista de Usuarios',users: users});
-  			//res.send(users); //nos enviaria el JSON
+//res.sendfile("./views/lista.html");
+       // res.render("coleccionusuarios", { title: 'Lista de Usuarios',users: users});
+  			res.send(users); //nos enviaria el JSON
         
   		} else {
   			console.log('ERROR: ' + err);
@@ -93,10 +93,12 @@ module.exports = function(app) {
   }
 
   //Link routes and functions
-  app.get('/users', findAllUsers);
+  //app.get('/users', findAllUsers);
   app.get('/user/:id', findById);
   app.post('/user', addUser);
   app.put('/user/:id', updateUser);
   app.delete('/user/:id', deleteUser);
-
+app.get('/users', function(req, res){
+	res.sendfile('./views/index.html');
+});
 }

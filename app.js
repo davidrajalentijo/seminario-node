@@ -21,7 +21,7 @@ app.set("view engine", "jade");
 });
 //en el localhost puerto 5000 enviamos datos para la web
 app.get('/', function(req, res){
-	res.render("index", {title : "Seminario: Express, Node js y RestFul WS"});
+	//res.render("index", {title : "Seminario: Express, Node js y RestFul WS"});
 	//res.send("Hello World!");
 });
 //enlazamos nuestra api

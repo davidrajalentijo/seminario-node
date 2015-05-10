@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listado Usuarios</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+<body ng-controller="mainController">
+<div class="container">
+    <!--Cabecera-->
+    <div class="jumbotron text-center">
+        <h1>Listado Usuarios <span class="label label-info">{{ users.lenght }}</span></h1>
+    </div>
+    <!--Lista de Todos-->
+    <div id="todo-list" class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="checkbox" ng-repeat="user in users">
+                <label>
+                    <input type="checkbox" > {{ user.username }}
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script> <script type="text/javascript" src="/views/maincontroller.js"></script>
+</body>
+</html>
